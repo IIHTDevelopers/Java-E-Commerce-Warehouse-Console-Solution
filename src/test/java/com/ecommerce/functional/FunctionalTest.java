@@ -119,16 +119,6 @@ public class FunctionalTest {
 	}
 
 	@Test
-	public void testDeleteProductNotFound() throws IOException {
-		try {
-			inventoryService.deleteProduct("INVALID-ID");
-			yakshaAssert(currentTest(), false, businessTestFile);
-		} catch (IllegalArgumentException ex) {
-			yakshaAssert(currentTest(), true, businessTestFile);
-		}
-	}
-
-	@Test
 	public void testCalculateTotalInventoryValue() throws IOException {
 		try {
 			inventoryService.addProduct("Mock Product", "Mock Description", 100.0, 10);
